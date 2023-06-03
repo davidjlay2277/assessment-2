@@ -138,7 +138,7 @@ manager.getEmployees()
 */
 
 //CODE HERE
-
+manager.addEmployee("Coach")
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 
@@ -146,3 +146,4 @@ manager.getEmployees()
 */
 
 //CODE HERE
+manager.getEmployees()
