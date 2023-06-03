@@ -22,11 +22,10 @@
 */
 
 //CODE HERE
-
-
-
-
-
+const greetUser = (userName) => {
+console.log('Welcome back,',userName);
+}
+greetUser("George Bailey")
 //////////////////PROBLEM 2////////////////////
 /* 
     Below is an array of zip codes that are in
