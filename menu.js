@@ -7,7 +7,6 @@
     and filtering those arrays. 
 */
 
-
 //////////////////PROBLEM 1////////////////////
 /*  
     Create an object called `pizza` that has 6
@@ -29,10 +28,15 @@
     user might filter by, like 'gluten-free' or
     'kids'
 */
-
 //CODE HERE
-
-
+const pizza = {
+  name: "Pizza",
+  price: 15,
+  category: "entree",
+  popularity: 5,
+  rating: 4.5,
+  tags: ["family", "delivery", "dine-in", "gluten heavy"],
+};
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -41,9 +45,8 @@
     First, log the popularity of pizza. 
     Use dot notation to access the value.
 */
-
 //CODE HERE
-
+console.log(pizza.popularity);
 
 /*
     Second, log the second tag in your pizza's
@@ -51,9 +54,9 @@
     Use a combination of dots and brackets to
     get the value.
 */
-
+console.log(pizza.tags[1]);
+console.log(pizza["tags"]);
 //CODE HERE
-
 
 /*
     Third, destructure the price off of the
@@ -61,9 +64,9 @@
     
     Print the value of your new price variable.
 */
-
 //CODE HERE
-
+let { price } = pizza;
+console.log("the price is $", price);
 
 /*
     Fourth, and last, destructure the category
@@ -71,9 +74,9 @@
 
     Print the value of your category variable. 
 */
-
 //CODE HERE
-
+let { category } = pizza;
+console.log("the category is", category);
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,9 +91,48 @@
 */
 
 //CODE HERE
-
-
-
+let foodArr = [
+    {
+        name: "breadsticks",
+        price: 7,
+        category: "appetizer",
+        popularity: 4,
+        rating: 4,
+        tags: ["sharable", "dine-in only", "bottomless", "vegetarian"],
+      },
+      {
+        name: "tea",
+        price: 2,
+        category: "beverage",
+        popularity: 3,
+        rating: 3.5,
+        tags: ["free refills", "caffine-free", "dine-in only"],
+      },
+      {
+        name: "lasagna",
+        price: 12,
+        category: "entree",
+        popularity: 5,
+        rating: 5,
+        tags: ["vegetarian", "large", "take-out"],
+      },
+      {
+        name: "pasta",
+        price: 11,
+        category: "entree",
+        popularity: 2,
+        rating: 3,
+        tags: ["family", "sharable"],
+      },
+      {
+        name: "tiramisu ",
+        price: 9,
+        category: "dessert",
+        popularity: 4,
+        rating: 5,
+        tags: ["decadent", "dine-in", "take-out"],
+      },
+]
 //////////////////PROBLEM 4////////////////////
 /* 
     Let's filter the food objects according
@@ -106,8 +148,6 @@
 //CODE HERE
 
 // const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
-
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -149,7 +189,6 @@
 */
 
 //CODE HERE
-
 
 /*
     Invoke the `filterByProperty` function passing

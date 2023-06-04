@@ -7,7 +7,6 @@
     page of the restaurant's website.
 */
 
-
 //////////////////PROBLEM 1////////////////////
 /* 
     Write an *arrow* function called `greetUser`
@@ -23,9 +22,9 @@
 
 //CODE HERE
 const greetUser = (userName) => {
-console.log('Welcome back,',userName);
-}
-greetUser("George Bailey")
+  console.log("Welcome back,", userName);
+};
+// greetUser("George Bailey");
 //////////////////PROBLEM 2////////////////////
 /* 
     Below is an array of zip codes that are in
@@ -46,11 +45,21 @@ greetUser("George Bailey")
         // `You're in our delivery zone!`
 */
 
-const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
+const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206];
 
 //CODE HERE
-
-
+const canWeDeliver = (zipCode) => {
+  //loop over the array of acceptable zip codes and check to see if any index is equal to the zip code entered in the function.
+  for (let i = 0; i < deliveryAreaZipCodes.length; i++) {
+    //conver zipCode string to number to avoid false negative
+    if (+zipCode === deliveryAreaZipCodes[i]) {
+      //truthy should return, exiting the function with the approptiate string. No need to check further.
+      return "You're in our delivery zone!";
+    }
+  }
+  //if the funtion did not return during the for loop, then the zip code was not found. return the apppropaite stirng for zip code not found.
+  return "Sorry, we can't deliver to that address";
+};
 
 /* 
     Problem 2 Continued
@@ -71,7 +80,27 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 // CODE HERE
 
+const canWeDeliverTwo = (zipCode) => {
+  if (deliveryAreaZipCodes.includes(+zipCode)) {
+    return "You're in our delivery zone!";
+  }
+  return "Sorry, we can't deliver to that address";
+};
 
+////////TESTING//////////
+// console.log("index 0: ");
+// console.log(canWeDeliverTwo(85205));
+// console.log("index 1: ");
+// console.log(canWeDeliverTwo(85204));
+// console.log("index 2: ");
+// console.log(canWeDeliverTwo(" 85203"));
+// console.log("index 3: ");
+// console.log(canWeDeliverTwo("85213"));
+// console.log("index 4: ");
+// console.log(canWeDeliverTwo(85206));
+// console.log("FALSE values: ");
+// console.log(canWeDeliverTwo(5205));
+// console.log(canWeDeliverTwo("85205"));
 //////////////////PROBLEM 3////////////////////
 /* 
     Below is an array of objects that have some
@@ -86,15 +115,15 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 */
 
 const deals = [
-    {
-        title: '15% Off!', 
-        desc: 'Applied to your entire order when you spend $30 or more'
-    }, 
-    {
-        title: 'Free Kids Meal with 2 Regular Entrees', 
-        desc: '   This deal lasts until the end of March! '
-    }
-]
+  {
+    title: "15% Off!",
+    desc: "Applied to your entire order when you spend $30 or more",
+  },
+  {
+    title: "Free Kids Meal with 2 Regular Entrees",
+    desc: "   This deal lasts until the end of March! ",
+  },
+];
 
 /*
     The owner has decided to take the 15% off
@@ -106,9 +135,12 @@ const deals = [
 */
 
 //CODE HERE
-
-
-
+// let string1 =  "15% Off!"
+// string1.replace('15', '10')
+// console.log(string1)
+// console.log(deals[0].title);
+let newTitle = deals.title.replace('15', '10');
+console.log(newTitle);
 /*
     The restaurant is going to continue its
     family deal for another month. 
