@@ -66,7 +66,7 @@ console.log(pizza["tags"]);
 */
 //CODE HERE
 let { price } = pizza;
-console.log("the price is $", price);
+console.log("the price of", pizza.name ,"is $", price);
 
 /*
     Fourth, and last, destructure the category
@@ -76,7 +76,7 @@ console.log("the price is $", price);
 */
 //CODE HERE
 let { category } = pizza;
-console.log("the category is", category);
+console.log(pizza.name, "is in the category of", category);
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -146,9 +146,25 @@ let foodArr = [
 */
 
 //CODE HERE
+let foodTest =
+{
+    name: "tiramisu ",
+    price: 9,
+    category: "dessert",
+    popularity: 4,
+    rating: 5,
+    tags: ["decadent", "dine-in", "take-out"],
+  }
+let {tags} = foodTest
+console.log(tags)
+
 
 // const filteredFood = foodArr.filter(/* CALLBACK HERE */)
 
+//find food objects that are avaialable for takeout
+
+
+// const filterFood = foodArr.filter()
 //////////////////PROBLEM 5////////////////////
 /* 
     Now let's write a function that's a little
