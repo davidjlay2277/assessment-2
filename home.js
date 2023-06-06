@@ -24,7 +24,7 @@
 const greetUser = (userName) => {
   console.log("Welcome back,", userName);
 };
-// greetUser("George Bailey");
+greetUser("Chewbacca");
 //////////////////PROBLEM 2////////////////////
 /* 
     Below is an array of zip codes that are in
@@ -44,7 +44,6 @@ const greetUser = (userName) => {
     canWeDeliver(85205) 
         // `You're in our delivery zone!`
 */
-
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206];
 
 //CODE HERE
@@ -60,7 +59,7 @@ const canWeDeliver = (zipCode) => {
   //if the funtion did not return during the for loop, then the zip code was not found. return the apppropaite stirng for zip code not found.
   return "Sorry, we can't deliver to that address";
 };
-
+console.log(canWeDeliver(55406))
 /* 
     Problem 2 Continued
 
@@ -79,17 +78,15 @@ const canWeDeliver = (zipCode) => {
 */
 
 // CODE HERE
-
 const canWeDeliverTwo = (zipCode) => {
   if (deliveryAreaZipCodes.includes(+zipCode)) {
     return "You're in our delivery zone!";
   }
   return "Sorry, we can't deliver to that address";
 };
+console.log(`checking index 0: ${canWeDeliverTwo(deliveryAreaZipCodes[0])}`);
 
-////////TESTING//////////
-// console.log("index 0: ");
-// console.log(canWeDeliverTwo(85205));
+///////////////////TESTING///////////////////////
 // console.log("index 1: ");
 // console.log(canWeDeliverTwo(85204));
 // console.log("index 2: ");
@@ -113,7 +110,6 @@ const canWeDeliverTwo = (zipCode) => {
 
     Read on for more instructions.
 */
-
 const deals = [
   {
     title: "15% Off!",
@@ -133,14 +129,13 @@ const deals = [
     to be itself, but use the `replace` method
     to replace the 15 with a 10.
 */
-
 //CODE HERE
-// let string1 =  "15% Off!"
-// string1.replace('15', '10')
-// console.log(string1)
-// console.log(deals[0].title);
-let newTitle = deals.title.replace('15', '10');
-console.log(newTitle);
+///////Practicing .replace method synatax with a variable
+    // let newTitle = deals[0].title.replace('15', '10');
+    // console.log(newTitle);
+
+deals[0].title = deals[0].title.replace('15', '10');
+console.log(deals[0]);
 /*
     The restaurant is going to continue its
     family deal for another month. 
@@ -155,3 +150,5 @@ console.log(newTitle);
 */
 
 //CODE HERE
+deals[1].desc = deals[1].desc.replace('March', 'April');
+console.log(deals[1]);
