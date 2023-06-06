@@ -92,47 +92,47 @@ console.log("the category is", category);
 
 //CODE HERE
 let foodArr = [
-    {
-        name: "breadsticks",
-        price: 7,
-        category: "appetizer",
-        popularity: 4,
-        rating: 4,
-        tags: ["sharable", "dine-in only", "bottomless", "vegetarian"],
-      },
-      {
-        name: "tea",
-        price: 2,
-        category: "beverage",
-        popularity: 3,
-        rating: 3.5,
-        tags: ["free refills", "caffine-free", "dine-in only"],
-      },
-      {
-        name: "lasagna",
-        price: 12,
-        category: "entree",
-        popularity: 5,
-        rating: 5,
-        tags: ["vegetarian", "large", "take-out"],
-      },
-      {
-        name: "pasta",
-        price: 11,
-        category: "entree",
-        popularity: 2,
-        rating: 3,
-        tags: ["family", "sharable"],
-      },
-      {
-        name: "tiramisu ",
-        price: 9,
-        category: "dessert",
-        popularity: 4,
-        rating: 5,
-        tags: ["decadent", "dine-in", "take-out"],
-      },
-]
+  {
+    name: "breadsticks",
+    price: 7,
+    category: "appetizer",
+    popularity: 4,
+    rating: 4,
+    tags: ["sharable", "dine-in only", "bottomless", "vegetarian"],
+  },
+  {
+    name: "tea",
+    price: 2,
+    category: "beverage",
+    popularity: 3,
+    rating: 3.5,
+    tags: ["free refills", "caffine-free", "dine-in only"],
+  },
+  {
+    name: "lasagna",
+    price: 12,
+    category: "entree",
+    popularity: 5,
+    rating: 5,
+    tags: ["vegetarian", "large", "take-out"],
+  },
+  {
+    name: "pasta",
+    price: 11,
+    category: "entree",
+    popularity: 2,
+    rating: 3,
+    tags: ["family", "sharable"],
+  },
+  {
+    name: "tiramisu ",
+    price: 9,
+    category: "dessert",
+    popularity: 4,
+    rating: 5,
+    tags: ["decadent", "dine-in", "take-out"],
+  },
+];
 //////////////////PROBLEM 4////////////////////
 /* 
     Let's filter the food objects according
