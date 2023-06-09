@@ -66,7 +66,7 @@ console.log(pizza["tags"]);
 */
 //CODE HERE
 let { price } = pizza;
-console.log("the price of", pizza.name ,"is $", price);
+console.log("the price of", pizza.name, "is $", price);
 
 /*
     Fourth, and last, destructure the category
@@ -89,7 +89,6 @@ console.log(pizza.name, "is in the category of", category);
     tags. That way, you'll be able to use this
     data in some functions that you'll write.
 */
-
 //CODE HERE
 let foodArr = [
   {
@@ -133,6 +132,7 @@ let foodArr = [
     tags: ["decadent", "dine-in", "take-out"],
   },
 ];
+
 //////////////////PROBLEM 4////////////////////
 /* 
     Let's filter the food objects according
@@ -144,28 +144,29 @@ let foodArr = [
     You can check for any tag that at least 1 of
     your food objects has.
 */
-
 //CODE HERE
-let foodTest =
-{
-    name: "tiramisu ",
-    price: 9,
-    category: "dessert",
-    popularity: 4,
-    rating: 5,
-    tags: ["decadent", "dine-in", "take-out"],
-  }
-let {tags} = foodTest
-console.log(tags)
 
+///use .filter to loop over the array, with the callback function for the filter being a find method. The find uses dot notation to look up the key "tags" at each object and then checks for "take-out" in that array (the tags array). If this is true, then the filter method evalutates true for that object. This whoudl return the lasagna and tiramisu objects for fooArr.
+const filteredFood = foodArr.filter((element) =>
+  element.tags.find((item) => item === "take-out")
+);
+console.log(filteredFood);
+///////PROVIDED CODE ////////////////
+////// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
-//find food objects that are avaialable for takeout
-
-
-// const filterFood = foodArr.filter()
 //////////////////PROBLEM 5////////////////////
+
+const filteredFood2 = foodArr.filter((element) =>
+  element.price.find((item) => item === "take-out")
+);
+console.log(filteredFood2);
+
+const filterByProperty = (property, type, num) => {
+  if (type === "below"){
+    if (testobject.property < num)
+  }
+}
+  
 /* 
     Now let's write a function that's a little
     more flexible than just filtering for one
@@ -213,4 +214,33 @@ console.log(tags)
     You'll have to console.log to see the filtered array
 */
 
-//CODE HERE
+
+let testObj = {
+  name: "pasta",
+  price: 11,
+  category: "entree",
+  popularity: 2,
+  rating: 3,
+  tags: ["family", "sharable"],
+};
+
+
+// let result;
+// const filterByProperty = (property, type, num) => {
+//   if (num > property) {
+//     if (type === "above") {
+//       return true;
+//     }
+//   } else if (num < property) {
+//     if (type === "below") {
+//       return true;
+//     }
+//   } else {
+//    return "The vlues are equal"
+//   }
+ 
+// };
+
+// console.log(filterByProperty(5, "below", 6));
+
+// let filteredArr = [];

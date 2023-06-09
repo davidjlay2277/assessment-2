@@ -59,7 +59,7 @@ const canWeDeliver = (zipCode) => {
   //if the funtion did not return during the for loop, then the zip code was not found. return the apppropaite stirng for zip code not found.
   return "Sorry, we can't deliver to that address";
 };
-console.log(canWeDeliver(55406))
+console.log(canWeDeliver(55406));
 /* 
     Problem 2 Continued
 
@@ -131,10 +131,10 @@ const deals = [
 */
 //CODE HERE
 ///////Practicing .replace method synatax with a variable
-    // let newTitle = deals[0].title.replace('15', '10');
-    // console.log(newTitle);
+/////////// let newTitle = deals[0].title.replace('15', '10');
+/////////////////// console.log(newTitle);
 
-deals[0].title = deals[0].title.replace('15', '10');
+deals[0].title = deals[0].title.replace("15", "10");
 console.log(deals[0]);
 /*
     The restaurant is going to continue its
@@ -150,5 +150,5 @@ console.log(deals[0]);
 */
 
 //CODE HERE
-deals[1].desc = deals[1].desc.replace('March', 'April');
+deals[1].desc = deals[1].desc.replace("March", "April");
 console.log(deals[1]);
