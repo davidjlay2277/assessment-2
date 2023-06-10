@@ -7,7 +7,6 @@
     creating customer objects.  
 */
 
-
 //////////////////PROBLEM 1////////////////////
 /*  
     Below is a cart array that has food objects
@@ -19,25 +18,34 @@
 */
 
 const cart = [
-    {
-        name: 'pizza', 
-        price: 9.99
-    }, 
-    {
-        name: 'pasta', 
-        price: 8.99
-    }, 
-    {
-        name: 'salad', 
-        price: 7.99
-    }
-]
+  {
+    name: "pizza",
+    price: 9.99,
+  },
+  {
+    name: "pasta",
+    price: 8.99,
+  },
+  {
+    name: "salad",
+    price: 7.99,
+  },
+];
 
-//CODE HERE
+// //CODE HERE
+let priceArr = [];
+let priceGrab = (arr1) => {
+  for (let i = 0; i < arr1.length; i++) {
+    priceArr.push(arr1[i].price);
+  }
+  console.log("all of hte prices", priceArr);
+  return priceArr;
+};
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+priceGrab(cart);
 
-
+const summedPrice = priceArr.reduce((a, i) => a + i, 0);
+console.log("the sum is", summedPrice);
 //////////////////PROBLEM 2////////////////////
 /*  
     Write a function called `calcFinalPrice` that
@@ -54,9 +62,10 @@ const cart = [
 */
 
 //CODE HERE
-
-
-
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    return cartTotal * (1 + tax) - couponValue;
+};
+console.log(calcFinalPrice(summedPrice, 5, .07))
 //////////////////PROBLEM 3////////////////////
 /*  
     In this problem, you'll create a model for 
@@ -79,6 +88,17 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    custoemr object properties
+
+    {
+    ticket: number
+    name: string
+    order: []
+    total: number
+    status: string
+    notes: string
+    }
+the custoemr should have a distince ticket number, a table number for the order, the order will be an array of items ordered and the total is the total price, status will indicate if the order is complete or not.  
 
 */
 
@@ -88,3 +108,12 @@ const cart = [
 */
 
 //CODE HERE
+let customerOne = {
+    ticket: 007,
+    name: "James Bond",
+    order: ["martini", "olives"],
+    total: 8,
+    status: "In progress",
+    notes: "shaken, not stirred",
+}
+console.log(customerOne)
