@@ -146,28 +146,21 @@ let foodArr = [
 */
 //CODE HERE
 
-///use .filter to loop over the array, with the callback function for the filter being a find method. The find uses dot notation to look up the key "tags" at each object and then checks for "take-out" in that array (the tags array). If this is true, then the filter method evalutates true for that object. This whoudl return the lasagna and tiramisu objects for fooArr.
+// Use .filter to loop over the array, with the callback function for the filter being a find method. The find uses dot notation to look up the key "tags" at each object and then checks for "take-out" in that array (the tags array). If this is true, then the filter method evalutates true for that object. This whoudl return the lasagna and tiramisu objects for fooArr.
+
+//////////////////////COMPELTED PROBLEM 4 /////////////////////////
 const filteredFood = foodArr.filter((element) =>
-  element.tags.find((item) => item === "take-out")
+  element.tags.find((food) => food === "take-out")
 );
-console.log(filteredFood);
+console.log('These menu items are available for take-out: ', filteredFood);
+
 ///////PROVIDED CODE ////////////////
+/////////////////////NOT USED ////////////////
 ////// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
 
 //////////////////PROBLEM 5////////////////////
-
-const filteredFood2 = foodArr.filter((element) =>
-  element.price.find((item) => item === "take-out")
-);
-console.log(filteredFood2);
-
-const filterByProperty = (property, type, num) => {
-  if (type === "below"){
-    if (testobject.property < num)
-  }
-}
-  
 /* 
+
     Now let's write a function that's a little
     more flexible than just filtering for one
     value. We want to be able to filter for 
@@ -192,6 +185,7 @@ const filterByProperty = (property, type, num) => {
     Inside the function, create a variable to hold
     a filtered array
 
+
     Use the filter method to filter the foodArr
 
         In the callback, check if the `type` is `above`, 
@@ -206,41 +200,49 @@ const filterByProperty = (property, type, num) => {
 */
 
 //CODE HERE
+console.log("\nBEGIN PROBLEM 5:\n");
+//set variables to be invoked by filterByProperty function to test diff values
+let property1 = "price";
+let num1 = 10;
+let type1 = "above";
 
+//////////////////////OPTION 1 , delcare callbacks ///////////////////////
+// const filterByProperty = (property, number, type) => {
+//   let filterFoodArr;
+//   const aboveCallback = (food) => food[property] > number;
+//   const belowCallback = (food) => food[property] < number;
+//   if (type === "above") {
+//     filterFoodArr = foodArr.filter(aboveCallback);
+//   }
+//   if (type === "below") {
+//     filterFoodArr = foodArr.filter(belowCallback);
+
+//   }
+//   console.log(`the following menu items have a ${property} ${type} ${number}`);
+//   console.log(filterFoodArr);
+// };
+
+//////////////////////OPTION 2, anonymous functions ///////////////////////////
+//////////////////////// with simplified printout  //////////////////////////////////
+const filterByProperty = (property, number, type) => {
+  let filterFoodArr;
+  if (type === "above") {
+    filterFoodArr = foodArr.filter((e) => e[property] > number);
+  }
+  if (type === "below") {
+    filterFoodArr = foodArr.filter((e) => e[property] < number);
+  }
+  console.log(`the following menu items have a ${property} ${type} ${number}:`);
+  //loop over the resulting array and print the name of the menu items only
+  for (let i = 0; i < filterFoodArr.length; i++) {
+    console.log(filterFoodArr[i].name);
+  }
+};
+// invoke the function with the viarbles declared above
+filterByProperty(property1, num1, type1);
 /*
     Invoke the `filterByProperty` function passing
     in a value for each paramter.
 
     You'll have to console.log to see the filtered array
 */
-
-
-let testObj = {
-  name: "pasta",
-  price: 11,
-  category: "entree",
-  popularity: 2,
-  rating: 3,
-  tags: ["family", "sharable"],
-};
-
-
-// let result;
-// const filterByProperty = (property, type, num) => {
-//   if (num > property) {
-//     if (type === "above") {
-//       return true;
-//     }
-//   } else if (num < property) {
-//     if (type === "below") {
-//       return true;
-//     }
-//   } else {
-//    return "The vlues are equal"
-//   }
- 
-// };
-
-// console.log(filterByProperty(5, "below", 6));
-
-// let filteredArr = [];
